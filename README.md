@@ -3,15 +3,18 @@
                    
 🌟CalNova Smart Scheduling for Solo Professionals & Small Businesses
 
-Goal: To build a full-stack web application that enables solo professionals and small businesses to efficiently manage client appointments through a clean, modern interface — replacing spreadsheets, WhatsApp bookings, or manual tracking.
+**Goal**: To build a full-stack web application that enables solo professionals and small businesses to efficiently manage client appointments through a clean, modern interface — replacing spreadsheets, WhatsApp bookings, or manual tracking.
 
-🔎 Problem
+## 🔎 Problem
+
 Many solo professionals (like therapists, salon owners, and tutors) rely on manual or fragmented tools for managing appointments, leading to missed bookings, overbooking, and poor client experiences.
 
-✅ Solution
+## ✅ Solution
+
 A responsive web app that allows business owners to set availability, manage bookings, and track clients from a central dashboard. Clients can view open slots and book, reschedule, or cancel appointments easily—without needing to log in.
 
-👥 Target Users
+## 👥 Target Users
+
 --> Salon owners.
 
 --> Therapists and life coaches.
@@ -20,29 +23,32 @@ A responsive web app that allows business owners to set availability, manage boo
 
 --> Small clinics or wellness practitioners.
 
-🔑 Core Features
-Admin dashboard: Manage schedule, clients, and appointments.
+## 🔑 Core Features
 
-Client booking system: Calendar-based, real-time availability.
+**Admin dashboard:** Manage schedule, clients, and appointments.
 
-Optional notifications: Email or SMS confirmations/reminders.
+**Client booking system**: Calendar-based, real-time availability.
 
-Authentication: Admin login; guest flow for clients
+**Optional notifications**: Email or SMS confirmations/reminders.
 
-🛠 Tech Stack
-Frontend: React + CSS
+**Authentication**: Admin login; guest flow for clients
 
-Backend: Node.js + Express.js
+## 🛠 Tech Stack
 
-Database: MongoDB / Firebase / PostgreSQL
+**Frontend**: React + CSS
 
-Auth: Firebase Auth or JWT
+**Backend**: Node.js + Express.js
 
-Deployment: Netlify + Render
+**Database**: MongoDB / Firebase / PostgreSQL
 
-📆 Daily Development Plan : 
+**Auth**: Firebase Auth or JWT
 
-✅ Week 1: Planning & Setup
+**Deployment**: Netlify + Render
+
+## 📆 Daily Development Plan : 
+
+✅ **Week 1: Planning & Setup**
+
 Day 1: Finalize idea, goals, features
 
 Day 2: Draw low-fidelity wireframes (paper/sketch)
@@ -58,7 +64,8 @@ Day 6: Set up backend (Express, folders, packages)
 Day 7: Plan database schema (Users, Appointments)
 
 
-✅ Week 2: Backend + Database
+✅ **Week 2: Backend + Database**
+
 Day 8: Connect MongoDB using Mongoose
 
 Day 9: Create User and Appointment models
@@ -74,7 +81,8 @@ Day 13: Test APIs with Postman
 Day 14: Deploy backend to Render
 
 
-✅ Week 3: Frontend + Auth
+✅**Week 3: Frontend + Auth**
+
 Day 15: Set up React app (Vite/CRA)
 
 Day 16: Build Login and Signup UI
@@ -90,7 +98,8 @@ Day 20: Connect dashboard to appointment APIs
 Day 21: Deploy frontend to Netlify
 
 
-✅ Week 4: Admin Features
+✅ **Week 4: Admin Features**
+
 Day 22: Add form to create appointments
 
 Day 23: Display appointments in dashboard
@@ -106,7 +115,8 @@ Day 27: Style dashboard with Tailwind
 Day 28: Make UI responsive
 
 
-✅ Week 5: Client Booking Flow
+✅ **Week 5: Client Booking Flow**
+
 Day 29: Build public booking page (no login)
 
 Day 30: Show available time slots
@@ -122,7 +132,8 @@ Day 34: Confirm success messages and flows
 Day 35: End-to-end testing (Admin + Client)
 
 
-✅ Week 6: Testing, Feedback, Submission
+✅ **Week 6: Testing, Feedback, Submission**
+
 Day 36: Write basic unit tests (Jest)
 
 Day 37: Final bug fixes
