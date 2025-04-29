@@ -1,6 +1,5 @@
 # S84_Manvi_Capstone_CalNova
-
-                   
+            
 🌟CalNova Smart Scheduling for Solo Professionals & Small Businesses
 
 **Goal**: To build a full-stack web application that enables solo professionals and small businesses to efficiently manage client appointments through a clean, modern interface — replacing spreadsheets, WhatsApp bookings, or manual tracking.
@@ -96,63 +95,3 @@ Day 19: Build basic admin dashboard layout
 Day 20: Connect dashboard to appointment APIs
 
 Day 21: Deploy frontend to Netlify
-
-
-✅ **Week 4: Admin Features**
-
-Day 22: Add form to create appointments
-
-Day 23: Display appointments in dashboard
-
-Day 24: Add edit/delete appointment options
-
-Day 25: Build availability setting page
-
-Day 26: Add basic client info view
-
-Day 27: Style dashboard with Tailwind
-
-Day 28: Make UI responsive
-
-
-✅ **Week 5: Client Booking Flow**
-
-Day 29: Build public booking page (no login)
-
-Day 30: Show available time slots
-
-Day 31: Booking form → save appointment
-
-Day 32: Add email confirmation (EmailJS/Nodemailer)
-
-Day 33: Allow cancel/reschedule from client side
-
-Day 34: Confirm success messages and flows
-
-Day 35: End-to-end testing (Admin + Client)
-
-
-✅ **Week 6: Testing, Feedback, Submission**
-
-Day 36: Write basic unit tests (Jest)
-
-Day 37: Final bug fixes
-
-Day 38: Polish UI + fix responsiveness
-
-Day 39: Get 2–3 users to test and give feedback
-
-Day 40: Record demo video
-
-Day 41: Write final README and document features
-
-Day 42: Submit project + present to mentor
-
-
-
-
-
-
-
-
-
