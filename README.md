@@ -16,6 +16,7 @@ A responsive web app that allows business owners to set availability, manage boo
 
 --> Salon owners.
 
+
 --> Therapists and life coaches.
 
 --> Tutors and language instructors.
