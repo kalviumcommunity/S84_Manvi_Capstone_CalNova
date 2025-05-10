@@ -5,10 +5,9 @@ const port = 8000;
 
 const appointmentRoutes = require('./routes/appointment');
 
+app.use(express.json());
 
 app.use('/api',appointmentRoutes);
-
-app.use(express.json());
 
 app.listen(port,()=>{
     console.log(`server running at port http://localhost:${port}`);
