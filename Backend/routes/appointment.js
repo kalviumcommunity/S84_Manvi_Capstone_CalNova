@@ -12,23 +12,24 @@ router.get('/', (req, res) => {
   res.json(mockAppointments);
 });
 
-// POST endpoint
-router.post('/', (req, res) => {
+// PUT endpoint
+
+router.put('/:id', (req, res) => {
+  const appointmentId = parseInt(req.params.id); 
   const { clientName, date, service } = req.body;
 
-  if (!clientName || !date || !service) {
-    return res.status(400).json({ message: 'Missing required fields' });
+  const index = mockAppointments.findIndex(app => app.id === appointmentId);
+
+  if (index === -1) {
+    return res.status(404).json({ message: 'Appointment not found' });
   }
 
-  const newAppointment = {
-    id: mockAppointments.length + 1,
-    clientName,
-    date,
-    service
-  };
+  // Update the appointment
+  if (clientName !== undefined) mockAppointments[index].clientName = clientName;
+  if (date !== undefined) mockAppointments[index].date = date;
+  if (service !== undefined) mockAppointments[index].service = service;
 
-  mockAppointments.push(newAppointment);
-  res.status(201).json(newAppointment);
+  res.json(mockAppointments[index]);
 });
 
 module.exports = router;
