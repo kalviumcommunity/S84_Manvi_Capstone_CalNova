@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 // Mock appointment data
 let mockAppointments = [
   { id: 1, clientName: 'Alice', date: '2025-05-10', service: 'Haircut' },
