@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['admin','client'],
         default: 'client'}
-    },
+     },
     {timestamps: true});
 
 module.exports = mongoose.model('User',userSchema);
