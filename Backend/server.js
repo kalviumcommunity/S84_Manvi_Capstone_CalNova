@@ -8,6 +8,7 @@ dotenv.config();
 app.use(express.json());
 
 const appointmentRoutes = require('./routes/appointment');
+const PORT =process.env.PORT || 8000;
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
@@ -16,10 +17,10 @@ mongoose.connect(process.env.MONGO_URI)
     console.log(`server running at port http://localhost:${PORT}`);
    });
 })
-.catch((err) => ('MongoDB connection error',err));
+.catch((err) => console.log('MongoDB connection error',err));
 
 app.use('/api',appointmentRoutes);
-app.use('./api/users',userRoutes);
+app.use('/api/users',userRoutes);
 
 app.get('/', (req, res) => {
     res.send('API is running.');
@@ -27,3 +28,4 @@ app.get('/', (req, res) => {
 
 
 const PORT =process.env.PORT || 8000;
+
