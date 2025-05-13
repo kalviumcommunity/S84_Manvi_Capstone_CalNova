@@ -9,6 +9,10 @@ const serviceSchema = new mongoose.Schema({
         type: Number,
         required: true 
     },
+    price: {
+        type: Number,
+        required: true
+    },
     description: String
     },
     {timestamps: true});
