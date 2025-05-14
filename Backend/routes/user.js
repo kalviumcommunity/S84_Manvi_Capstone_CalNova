@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const Booking = require('../models/Booking');
 
 // GET all users
 router.get('/', async (req, res) => {
@@ -61,5 +62,44 @@ router.put('/:id', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+//test route
+router.get('/test/populated-bookings', async (req, res) => {
+  try {
+    const bookings = await Booking.find()
+      .populate('client', 'name email')
+      .populate({
+        path: 'service',
+        populate: {
+          path: 'provider',
+          select: 'name email'
+        }
+      });
+
+    res.json(bookings);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+router.get('/test/populated-bookings', async (req, res) => {
+  try {
+    const bookings = await Booking.find()
+      .populate('client', 'name email')
+      .populate({
+        path: 'service',
+        populate: {
+          path: 'provider',
+          select: 'name email'
+        }
+      });
+
+    res.json(bookings);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 
 module.exports = router;
