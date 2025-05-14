@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const Booking = require('../models/Booking');
 
+
 // GET all users
 router.get('/', async (req, res) => {
   try {
@@ -103,3 +104,4 @@ router.get('/test/populated-bookings', async (req, res) => {
 
 
 module.exports = router;
+
