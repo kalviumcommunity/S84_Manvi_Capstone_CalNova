@@ -82,24 +82,6 @@ router.get('/test/populated-bookings', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
-router.get('/test/populated-bookings', async (req, res) => {
-  try {
-    const bookings = await Booking.find()
-      .populate('client', 'name email')
-      .populate({
-        path: 'service',
-        populate: {
-          path: 'provider',
-          select: 'name email'
-        }
-      });
-
-    res.json(bookings);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
-  }
-});
-
 
 module.exports = router;
+
