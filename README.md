@@ -148,3 +148,5 @@ Day 41: Write final README and document features
 Day 42: Submit project + present to mentor
 
 Backend Deployment Link - https://s84-manvi-capstone-calnova-cduc.onrender.com
+
+Frontend Deployment Link - https://dynamic-pegasus-83c043.netlify.app/
