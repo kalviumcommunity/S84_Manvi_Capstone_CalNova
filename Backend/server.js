@@ -9,7 +9,6 @@ app.use(express.json());
 const PORT =process.env.PORT || 8000;
 
 const appointmentRoutes = require('./routes/appointment');
-const PORT =process.env.PORT || 8000;
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
