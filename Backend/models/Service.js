@@ -13,6 +13,11 @@ const serviceSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    provider: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
     description: String
     },
     {timestamps: true});
