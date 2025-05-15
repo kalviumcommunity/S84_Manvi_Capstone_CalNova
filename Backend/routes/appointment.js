@@ -1,57 +1,60 @@
 const express = require('express');
 const router = express.Router();
-const {verifyToken} = require('../utils/jwt');
+const Booking = require('../models/Booking');
+const { verifyToken } = require('../utils/jwt');
 
-
-// Mock appointment data
-let mockAppointments = [
-  { id: 1, clientName: 'Alice', date: '2025-05-10', service: 'Haircut' },
-  { id: 2, clientName: 'Bob', date: '2025-05-12', service: 'Therapy Session' }
-];
-
-// GET endpoint
-router.get('/', (req, res) => {
-  res.json(mockAppointments);
+// GET all appointments for logged-in user
+router.get('/', verifyToken, async (req, res) => {
+  try {
+    const appointments = await Booking.find({ userId: req.user.userId });
+    res.json(appointments);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
-// POST endpoint
-router.post('/', (req, res) => {
+// CREATE new appointment
+router.post('/', verifyToken, async (req, res) => {
   const { clientName, date, service } = req.body;
 
   if (!clientName || !date || !service) {
     return res.status(400).json({ message: 'Missing required fields' });
   }
 
-  const newAppointment = {
-    id: mockAppointments.length + 1,
-    clientName,
-    date,
-    service
-  };
+  try {
+    const newAppointment = new Booking({
+      clientName,
+      date,
+      service,
+      userId: req.user.userId,
+    });
 
-  mockAppointments.push(newAppointment);
-  res.status(201).json(newAppointment);
+    await newAppointment.save();
+    res.status(201).json(newAppointment);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
-// PUT endpoint
-
-router.put('/:id', (req, res) => {
-  const appointmentId = parseInt(req.params.id); // convert from string to number
+// UPDATE appointment
+router.put('/:id', verifyToken, async (req, res) => {
   const { clientName, date, service } = req.body;
 
-  const index = mockAppointments.findIndex(app => app.id === appointmentId);
+  try {
+    const updatedAppointment = await Booking.findOneAndUpdate(
+      { _id: req.params.id, userId: req.user.userId },
+      { clientName, date, service },
+      { new: true }
+    );
 
-  if (index === -1) {
-    return res.status(404).json({ message: 'Appointment not found' });
+    if (!updatedAppointment) {
+      return res.status(404).json({ message: 'Appointment not found' });
+    }
+
+    res.json(updatedAppointment);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
-
-  // Update the appointment
-  if (clientName !== undefined) mockAppointments[index].clientName = clientName;
-  if (date !== undefined) mockAppointments[index].date = date;
-  if (service !== undefined) mockAppointments[index].service = service;
-
-  res.json(mockAppointments[index]);
 });
-
 
 module.exports = router;
