@@ -4,6 +4,10 @@ const dotenv = require('dotenv');
 const app = express();
 const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/authentication');
+const serviceRoutes = require('./routes/service');
+const cors = require('cors');
+
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 
 dotenv.config();
 app.use(express.json());
@@ -20,10 +24,10 @@ mongoose.connect(process.env.MONGO_URI)
 })
 .catch((err) => console.log('MongoDB connection error',err));
 
-app.use('/api',appointmentRoutes);
+app.use('/api/appointment',appointmentRoutes);
 app.use('/api/users',userRoutes);
 app.use('/api/auth',authRoutes);
-
+app.use('/api/services',serviceRoutes);
 
 app.get('/', (req, res) => {
     res.send('API is running.');
