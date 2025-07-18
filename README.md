@@ -149,4 +149,4 @@ Day 42: Submit project + present to mentor
 
 Backend Deployment Link - https://s84-manvi-capstone-calnova-cduc.onrender.com
 
-Frontend Deployment Link - https://dynamic-pegasus-83c043.netlify.app/
+Frontend Deployment Link - https://elegant-salamander-a6cb1c.netlify.app/
