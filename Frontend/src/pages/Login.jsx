@@ -43,6 +43,15 @@ const Login = () => {
 
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
+        
+        // Save user to local storage to prevent "Guest User" display
+        if (res.data.user) {
+          localStorage.setItem("user", JSON.stringify(res.data.user));
+        } else {
+          // Fallback if backend doesn't return user object directly
+          const fallbackName = formData.name || formData.email.split('@')[0];
+          localStorage.setItem("user", JSON.stringify({ name: fallbackName, email: formData.email }));
+        }
 
         if (isSignup) {
           navigate("/dashboard");
